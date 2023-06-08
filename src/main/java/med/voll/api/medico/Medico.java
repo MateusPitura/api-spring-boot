@@ -17,6 +17,7 @@ public class Medico{
     private Especialidades especialidade;
     @Embedded
     private Endereco endereco;
+    private Boolean ativo;
 
     public Medico(String nome, String email, String telefone, String crm, Especialidades especialidade, Endereco endereco) {
         this.nome = nome;
@@ -38,6 +39,19 @@ public class Medico{
         this.crm = dados.getCrm();
         this.especialidade = dados.getEspecialidade();
         this.endereco = new Endereco(dados.getEndereco());
+        this.ativo = true;
+    }
+
+    public void atualizarInformacoes(DadosAtualizacaoMedico dados){
+        if(dados.getNome()!=null){
+            this.nome = dados.getNome();
+        }
+        if(dados.getTelefone()!=null){
+            this.telefone = dados.getTelefone();
+        }
+        if(dados.getEndereco()!=null){
+            this.endereco.atualizarInformacoes(dados.getEndereco());
+        }
     }
 
     public Long getId() {
@@ -96,8 +110,20 @@ public class Medico{
         this.endereco = endereco;
     }
 
+    public Boolean getAtivo() {
+        return ativo;
+    }
+    
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
     @Override
     public String toString() {
         return this.nome + " | " + this.email + " | " + this.crm + " | " + this.especialidade + " | " + this.endereco;
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
