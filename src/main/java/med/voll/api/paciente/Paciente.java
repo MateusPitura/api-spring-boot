@@ -15,6 +15,7 @@ public class Paciente {
     private String cpf;
     @Embedded
     private Endereco endereco;
+    private Boolean ativo;
 
     public Paciente(String nome, String email, String telefone, String cpf, Endereco endereco) {
         this.nome = nome;
@@ -34,6 +35,7 @@ public class Paciente {
         this.telefone = dados.getTelefone();
         this.cpf = dados.getCpf();
         this.endereco = new Endereco(dados.getEndereco());
+        this.ativo = true;
     }
 
     public String getEmail() {
@@ -73,5 +75,17 @@ public class Paciente {
     }
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
