@@ -1,6 +1,6 @@
-package med.voll.api.paciente;
+package med.voll.api.Domain.paciente;
 
-import med.voll.api.Endereco.DadosEndereco;
+import med.voll.api.Domain.Endereco.DadosEndereco;
 
 public record DadosAtualizaoPaciente(
     Long id,

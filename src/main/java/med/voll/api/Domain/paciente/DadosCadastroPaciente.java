@@ -1,8 +1,8 @@
-package med.voll.api.paciente;
+package med.voll.api.Domain.paciente;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import med.voll.api.Endereco.DadosEndereco;
+import med.voll.api.Domain.Endereco.DadosEndereco;
 
 public class DadosCadastroPaciente {
     @NotBlank

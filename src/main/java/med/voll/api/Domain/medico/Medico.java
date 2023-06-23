@@ -1,7 +1,7 @@
-package med.voll.api.medico;
+package med.voll.api.Domain.medico;
 
 import jakarta.persistence.*;
-import med.voll.api.Endereco.Endereco;
+import med.voll.api.Domain.Endereco.Endereco;
 
 @Entity
 @Table(name="medicos")
